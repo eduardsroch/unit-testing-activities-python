@@ -7,6 +7,4 @@ class EventHandler:
         self.email_service = email_service
 
     def handle_event(self, event):
-        if not isinstance(event, dict) or 'type' not in event:
-            raise ValueError("Invalid event format")
         self.email_service.send_email('test@example.com', 'Event Occurred', str(event))
